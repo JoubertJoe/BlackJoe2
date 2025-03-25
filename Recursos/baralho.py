@@ -1,9 +1,8 @@
 #Definindo Baralho(s)
 import pyCardDeck
-import pyCardDeck as deck
 
 # lista de Naipes
-Naipes = ['PAUS', 'OURO',
+Naipes = ['PAU', 'OURO',
          'CORACAO', 'ESPADA']
 # lista de ranks
 Ranks = ['A', '2', '3', '4',
@@ -38,7 +37,8 @@ def baralho_coringa():
     baralho = pyCardDeck.Deck(cards=baralho, name="Baralho Comum")
     return baralho
 
-print(baralho_coringa().json)
+def embaralhar(baralho):
+    baralho.shuffle()
 
-
-
+def puxa_carta(baralho):
+    return (baralho.draw())

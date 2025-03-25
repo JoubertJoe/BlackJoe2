@@ -5,7 +5,7 @@ pygame.init()
 
 #tela de jogo
 tela_x = 800
-tela_y = 600
+tela_y = 800
 
 #Define cor
 cor_texto = (255,255,255)
@@ -28,13 +28,10 @@ def desenha_texto(texto, font, cor_texto, x, y):
 run = True
 while run:
     tela.fill((52, 78, 91))
-    desenha_texto("Aperte espaço para pausar", font, cor_texto, 160, 250)
+    desenha_texto("Teste Menu", font, cor_texto, 160, 250)
 
     #event handler
     for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                game_pause = True
         if event.type == pygame.QUIT:
             run = False
 
