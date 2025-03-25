@@ -70,9 +70,8 @@ def vez_jogador(placar_jogador, baralho_jogador):
 
 def vez_banca(placar_banca, baralho_banca, placar_jogador):
     while((placar_banca < 17) or (placar_banca < placar_jogador)):
-        carta, pontuacao = bj.puxaCarta(baralho_banca, placar_banca)
+        carta, placar_banca = bj.puxaCarta(baralho_banca, placar_banca)
         mostrar_carta(carta)
-        placar_banca = placar_banca + pontuacao
         print("Placar Banca: ", placar_banca)
     return placar_banca
 
@@ -87,7 +86,6 @@ print("Placar Banca :", placar_banca)
 print("Embaralhando")
 print("Você começa:")
 placar_jogador = vez_jogador(placar_jogador, baralho_jogador)
-if (placar_jogador <= 21):
+if (placar_jogador < 21):
     placar_banca = vez_banca(placar_banca, baralho_banca, placar_jogador)
-    print("Placar Banca: ", placar_banca)
-    print(bj.valida_jogo(placar_jogador, placar_banca))
+print(bj.valida_jogo(placar_jogador, placar_banca))
